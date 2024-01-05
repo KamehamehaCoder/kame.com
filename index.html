@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPopsuki Radio! - Webplayer</title>
+    <script language="javascript" type="text/javascript" src="https://jpopsuki.fm:2199/system/player.js"></script>
+    <script language="javascript" type="text/javascript" src="https://jpopsuki.fm:2199/system/streaminfo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+    <div style="text-align: center; font-family: Helvetica Neue; padding:3px; border: 2px solid #FF69B4; border-radius: 25px; width: 350px">
+        <span style="color: #FF69B4" class="cc_streaminfo" data-type="title" data-username="jpopsuki"></span><br />
+        Playing: <a href="https://jpopsuki.fm:2199/tunein/jpopsuki.pls" class="cc_streaminfo" data-type="song" data-username="jpopsuki">Loading ...</a><br />
+
+        <div id="album-details">
+            <img id="album-cover" style="max-width: 150px; max-height: 150px;" />
+            <p id="artist-details"></p>
+        </div>
+
+        <audio style="margin-top: 5px; margin-bottom: 5px;" controls="true" preload="none">
+            <source src="https://jpopsuki.fm:8000/stream" type="audio/mp3">Your browser does not support the audio element.
+        </audio><br>
+
+        <small style="color: grey">
+            Bit rate: <span class="cc_streaminfo" data-type="bitrate" data-username="jpopsuki"></span>,
+            Listeners: <span class="cc_streaminfo" data-type="listeners" data-username="jpopsuki"></span> of
+            <span class="cc_streaminfo" data-type="maxlisteners" data-username="jpopsuki"></span>
+        </small>
+    </div>
+
+    <script>
+        // Function to fetch album details using Last.fm API
+        function fetchAlbumDetails(artist, track) {
+            var lastfmApiKey = 'f6548a0d74f1a2803fa3f696b86be180';
+            var lastfmApiUrl = 'https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=' + lastfmApiKey + '&artist=' + artist + '&track=' + track + '&format=json';
+
+            $.ajax({
+                url: lastfmApiUrl,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.track) {
+                        var albumCover = data.track.album.image[2]['#text']; // Change index based on your preference
+                        var artistDetails = data.track.artist.name;
+
+                        $('#album-cover').attr('src', albumCover);
+                        $('#artist-details').text('Artist: ' + artistDetails);
+                    }
+                },
+                error: function (error) {
+                    console.log('Error fetching Last.fm data:', error);
+                }
+            });
+        }
+
+        // Function to update album details when a new song starts
+        function updateAlbumDetails() {
+            var songElement = $('.cc_streaminfo[data-type="song"]');
+            var songDetails = songElement.text().split(' - ');
+
+            if (songDetails.length === 2) {
+                var artist = songDetails[0].trim();
+                var track = songDetails[1].trim();
+                fetchAlbumDetails(artist, track);
+            }
+        }
+
+        // Update album details on page load
+        updateAlbumDetails();
+
+        // Update album details when a new song starts
+        $('.cc_streaminfo[data-type="title"]').bind('DOMSubtreeModified', function () {
+            updateAlbumDetails();
+        });
+    </script>
+
+</body>
+
+</html>

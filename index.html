@@ -1,82 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JPopsuki Radio! - Webplayer</title>
-    <script language="javascript" type="text/javascript" src="https://jpopsuki.fm:2199/system/player.js"></script>
-    <script language="javascript" type="text/javascript" src="https://jpopsuki.fm:2199/system/streaminfo.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <meta charset=utf-8>
+    <title>亀</title>
+    <script src=https://cdn.jsdelivr.net/npm/p5@0.8.0/lib/p5.js type=text/javascript></script>
+    <script>
+        const _0x1254d6=_0x2524;function _0x2524(_0x3fef20,_0x2d96b9){const _0x4b2e64=_0x4b2e();return _0x2524=function(_0x252499,_0xa1c542){_0x252499=_0x252499-0x115;let _0x9fce54=_0x4b2e64[_0x252499];return _0x9fce54;},_0x2524(_0x3fef20,_0x2d96b9);}(function(_0x576616,_0x6aa94a){const _0x4204ee=_0x2524,_0xe5828=_0x576616();while(!![]){try{const _0xf8acfb=parseInt(_0x4204ee(0x128))/0x1+parseInt(_0x4204ee(0x11f))/0x2+-parseInt(_0x4204ee(0x126))/0x3+parseInt(_0x4204ee(0x11b))/0x4*(parseInt(_0x4204ee(0x12d))/0x5)+parseInt(_0x4204ee(0x11e))/0x6+-parseInt(_0x4204ee(0x115))/0x7*(parseInt(_0x4204ee(0x125))/0x8)+parseInt(_0x4204ee(0x12e))/0x9*(parseInt(_0x4204ee(0x121))/0xa);if(_0xf8acfb===_0x6aa94a)break;else _0xe5828['push'](_0xe5828['shift']());}catch(_0x3a5df3){_0xe5828['push'](_0xe5828['shift']());}}}(_0x4b2e,0xbb8b6));const textToWrite=_0x1254d6(0x118),SEGMENTS=0xc8;let centerX,centerY,fontSize,fontSize2,INNER_RADIUS,RADIUS_VARIATION,TEXT_VARIANT;const palette=['#cdb4db','#ffc8dd','#ffafcc',_0x1254d6(0x11c),_0x1254d6(0x127)];let lines=[],linesNum=0x3c;const DIST=0xa;let MAX;const GEN=0x1e;let stColor;function setup(){const _0x1982df=_0x1254d6;createCanvas(windowWidth,windowHeight),centerX=windowWidth/0x2,centerY=windowHeight/0x2;let _0x53543c=min(height,width)/0x3e8;fontSize=_0x53543c*0x96,fontSize2=_0x53543c*0x14,INNER_RADIUS=_0x53543c*0xc8,RADIUS_VARIATION=_0x53543c*0xc8,TEXT_VARIANT=0x0,MAX=width>height?width:height,stColor=random(palette);for(let _0x2bab88=0x0;_0x2bab88<0x3c;_0x2bab88++){lines[_0x1982df(0x12a)](new MyLine());}}function pointForIndex(_0x4d3536){let _0x54db09=_0x4d3536*TWO_PI,_0x45ed05=cos(_0x54db09),_0x4b7acd=sin(_0x54db09),_0x193ac0=frameCount/0x64,_0x4c14a9=noise(1.5*_0x45ed05+1.5,1.5*_0x4b7acd+1.5,_0x193ac0),_0x15f8ff=INNER_RADIUS+RADIUS_VARIATION*_0x4c14a9;return{'x':_0x15f8ff*_0x45ed05+centerX,'y':_0x15f8ff*_0x4b7acd+centerY};}function _0x4b2e(){const _0x58a4a4=['hasDistance','142112voucKE','2453289VynOwS','#a2d2ff','47147SKHMks','objs','push','Helvetica','length','5JPfYjF','9eLYMvr','speed','charAt','504DSpNRS','display','isFinished','KamehamehaCoder!','width','height','5955428ztThVe','#bde0fe','splice','3688278eOZQCk','346086RvhlRb','color','5411930JxvAcL','Contact\x20me\x20here:\x0a\x0ahimanshukumardubey23@gmail.com','move'];_0x4b2e=function(){return _0x58a4a4;};return _0x4b2e();}function draw(){const _0x3038aa=_0x1254d6;background(0xff),noStroke();for(let _0x4c76c6=0x0;_0x4c76c6<lines[_0x3038aa(0x12c)];_0x4c76c6++){push(),translate(width/0x2,height/0x2),rotate(0x168*_0x4c76c6/lines[_0x3038aa(0x12c)]),lines[_0x4c76c6][_0x3038aa(0x116)](),pop();}fill(0xeb),stroke(stColor),strokeWeight(0xa),circle(width/0x2,height/0x2,MAX*0.2),noStroke();TEXT_VARIANT===0x0?fill(0x0):fill('#ED225D');noStroke(),beginShape();for(let _0x347566=0x0;_0x347566<0xc8;_0x347566++){let _0x340a78=pointForIndex(_0x347566/0xc8);vertex(_0x340a78['x'],_0x340a78['y']);}endShape(CLOSE),textFont('Helvetica'),textAlign(LEFT,BASELINE),textSize(fontSize);TEXT_VARIANT===0x1?fill(0x0):fill('#ED225D');let _0x4c644b=atan2(mouseY-centerY,mouseX-centerX)/TWO_PI,_0x51c089=0x1/((INNER_RADIUS+RADIUS_VARIATION/0x2)*TWO_PI);for(let _0x1a7fda=0x0;_0x1a7fda<textToWrite[_0x3038aa(0x12c)];_0x1a7fda++){let _0x592631=textWidth(textToWrite[_0x3038aa(0x130)](_0x1a7fda));_0x4c644b+=_0x592631/0x2*_0x51c089;let _0x3ce75b=pointForIndex(_0x4c644b-0.01),_0x13a085=pointForIndex(_0x4c644b+0.01),_0xd3f22f=atan2(_0x3ce75b['y']-_0x13a085['y'],_0x3ce75b['x']-_0x13a085['x'])+PI;push();let _0x3cc2d9=pointForIndex(_0x4c644b);translate(_0x3cc2d9['x'],_0x3cc2d9['y']),rotate(_0xd3f22f),translate(-_0x3cc2d9['x'],-_0x3cc2d9['y']),text(textToWrite['charAt'](_0x1a7fda),_0x3cc2d9['x']-_0x592631/0x2,_0x3cc2d9['y']),pop(),_0x4c644b+=_0x592631/0x2*_0x51c089;}textFont(_0x3038aa(0x12b)),textSize(fontSize2),textAlign(CENTER,CENTER),fill(0xff,0xff,0xff);let _0x38f35c='I\x20am\x20passionate\x20about\x20Android\x20development,\x20creating\x20innovative\x20mobile\x20applications\x20that\x20leverage\x20the\x20power\x20of\x20technology.\x20With\x20a\x20keen\x20interest\x20in\x20user-centric\x20design\x20and\x20seamless\x20functionality,\x20I\x20bring\x20a\x20creative\x20and\x20practical\x20approach\x20to\x20crafting\x20engaging\x20Android\x20experiences.\x20Additionally,\x20I\x20have\x20a\x20strong\x20foundation\x20in\x20web\x20design,\x20allowing\x20me\x20to\x20bridge\x20the\x20gap\x20between\x20mobile\x20and\x20web\x20development,\x20ensuring\x20a\x20cohesive\x20and\x20integrated\x20digital\x20presence.';TEXT_VARIANT===0x1&&(_0x38f35c=_0x3038aa(0x122)),text(_0x38f35c,centerX-INNER_RADIUS,centerY-INNER_RADIUS/0x2,INNER_RADIUS*0x2);}function mouseClicked(){TEXT_VARIANT===0x0?TEXT_VARIANT=0x1:TEXT_VARIANT=0x0;}class MyLine{constructor(){const _0x175b8c=_0x1254d6;this['objs']=[],this[_0x175b8c(0x12f)]=random(0x3,0x6),this[_0x175b8c(0x11a)]=random(0x2,0xa);}[_0x1254d6(0x116)](){const _0x38318c=_0x1254d6;random(0x64)<0x1e&&((this[_0x38318c(0x129)]['length']==0x0||this[_0x38318c(0x129)]['length']>0x0&&this[_0x38318c(0x129)][this['objs'][_0x38318c(0x12c)]-0x1][_0x38318c(0x124)]())&&this[_0x38318c(0x129)][_0x38318c(0x12a)](new Obj(this['speed'],this[_0x38318c(0x11a)])));for(let _0x338590=0x0;_0x338590<this[_0x38318c(0x129)][_0x38318c(0x12c)];_0x338590++){this['objs'][_0x338590][_0x38318c(0x123)](),this['objs'][_0x338590]['display']();}this[_0x38318c(0x129)][_0x38318c(0x12c)]>0x0&&this[_0x38318c(0x129)][0x0][_0x38318c(0x117)]()&&this['objs'][_0x38318c(0x11d)](0x0,0x1);}}class Obj{constructor(_0xf84a00,_0x26d4e3){const _0x1d21a3=_0x1254d6;this['x']=0x0,this['y']=0x0,this[_0x1d21a3(0x12f)]=_0xf84a00,this[_0x1d21a3(0x119)]=random(0xa,0x64),this[_0x1d21a3(0x11a)]=_0x26d4e3,this[_0x1d21a3(0x120)]=color(random(palette));}[_0x1254d6(0x123)](){const _0x507e01=_0x1254d6;this['x']-=this[_0x507e01(0x12f)];}[_0x1254d6(0x117)](){const _0x357840=_0x1254d6;return this['x']<-MAX*0.6-this[_0x357840(0x119)];}['hasDistance'](){const _0x2a7831=_0x1254d6;return this['x']<-(this[_0x2a7831(0x119)]+0xa);}['display'](){const _0xbe6168=_0x1254d6;fill(this['color']),rect(this['x'],this['y'],this[_0xbe6168(0x119)],this[_0xbe6168(0x11a)],this[_0xbe6168(0x11a)]/0x2);}}
+    </script>
 </head>
 
 <body>
-
-    <div style="text-align: center; font-family: Helvetica Neue; padding:3px; border: 2px solid #FF69B4; border-radius: 25px; width: 350px">
-        <span style="color: #FF69B4" class="cc_streaminfo" data-type="title" data-username="jpopsuki"></span><br />
-        Playing: <a href="https://jpopsuki.fm:2199/tunein/jpopsuki.pls" class="cc_streaminfo" data-type="song" data-username="jpopsuki">Loading ...</a><br />
-
-        <div id="album-details">
-            <img id="album-cover" style="max-width: 150px; max-height: 150px;" />
-            <p id="artist-details"></p>
-        </div>
-
-        <audio style="margin-top: 5px; margin-bottom: 5px;" controls="true" preload="none">
-            <source src="https://jpopsuki.fm:8000/stream" type="audio/mp3">Your browser does not support the audio element.
-        </audio><br>
-
-        <small style="color: grey">
-            Bit rate: <span class="cc_streaminfo" data-type="bitrate" data-username="jpopsuki"></span>,
-            Listeners: <span class="cc_streaminfo" data-type="listeners" data-username="jpopsuki"></span> of
-            <span class="cc_streaminfo" data-type="maxlisteners" data-username="jpopsuki"></span>
-        </small>
-    </div>
-
-    <script>
-        // Function to fetch album details using Last.fm API
-        function fetchAlbumDetails(artist, track) {
-            var lastfmApiKey = 'f6548a0d74f1a2803fa3f696b86be180';
-            var lastfmApiUrl = 'https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=' + lastfmApiKey + '&artist=' + artist + '&track=' + track + '&format=json';
-
-            $.ajax({
-                url: lastfmApiUrl,
-                dataType: 'json',
-                success: function (data) {
-                    if (data.track) {
-                        var albumCover = data.track.album.image[2]['#text']; // Change index based on your preference
-                        var artistDetails = data.track.artist.name;
-
-                        $('#album-cover').attr('src', albumCover);
-                        $('#artist-details').text('Artist: ' + artistDetails);
-                    }
-                },
-                error: function (error) {
-                    console.log('Error fetching Last.fm data:', error);
-                }
-            });
-        }
-
-        // Function to update album details when a new song starts
-        function updateAlbumDetails() {
-            var songElement = $('.cc_streaminfo[data-type="song"]');
-            var songDetails = songElement.text().split(' - ');
-
-            if (songDetails.length === 2) {
-                var artist = songDetails[0].trim();
-                var track = songDetails[1].trim();
-                fetchAlbumDetails(artist, track);
-            }
-        }
-
-        // Update album details on page load
-        updateAlbumDetails();
-
-        // Update album details when a new song starts
-        $('.cc_streaminfo[data-type="title"]').bind('DOMSubtreeModified', function () {
-            updateAlbumDetails();
-        });
-    </script>
-
 </body>
 
 </html>
